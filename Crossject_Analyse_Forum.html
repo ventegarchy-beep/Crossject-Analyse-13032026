@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crossject ALCJ — Analyse Forum 13/03/2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#040a08;--surface:#080f0c;--surface2:#0d1a14;--border:#122018;--accent:#4ade80;--green:#34d399;--blue:#60a5fa;--warn:#fbbf24;--danger:#f87171;--orange:#fb923c;--purple:#c084fc;--teal:#2dd4bf;--text:#b0cfc0;--heading:#e0f8ec;--muted:#1a3028}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;font-size:14.5px;line-height:1.7;padding:28px 18px 60px}
+.wrap{max-width:900px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#04100a,#061510);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:14px;padding:26px 28px 22px;margin-bottom:24px;position:relative;overflow:hidden}
+.hero::before{content:'🧬';position:absolute;right:28px;top:50%;transform:translateY(-50%);font-size:80px;opacity:.06;pointer-events:none}
+.badge{display:inline-flex;align-items:center;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.28);border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:22px;font-weight:900;color:var(--heading);line-height:1.25;margin-bottom:10px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted)}
+.alert{border-radius:12px;padding:16px 20px;margin-bottom:14px}
+.ag{background:rgba(52,211,153,.07);border:1px solid rgba(52,211,153,.28)}
+.ag .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.ag p{color:#a7f3d0;font-size:13.5px;margin-bottom:5px}
+.aw{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.28)}
+.aw .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--warn);margin-bottom:8px}
+.aw p{color:#fde68a;font-size:13.5px;margin-bottom:5px}
+.ap{background:rgba(192,132,252,.07);border:1px solid rgba(192,132,252,.28)}
+.ap .at{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+.ap p{color:#e9d5ff;font-size:13.5px;margin-bottom:5px}
+.alert p:last-child{margin-bottom:0}
+strong{color:var(--heading);font-weight:700}
+.slbl{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.slbl::after{content:'';flex:1;height:1px;background:var(--border)}
+.kg{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin-bottom:28px}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+.kl{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.kv{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:600;color:var(--heading);margin-bottom:3px}
+.kd{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700}
+.kd.up{color:var(--green)}.kd.warn{color:var(--warn)}.kd.bl{color:var(--blue)}.kd.red{color:var(--danger)}.kd.p{color:var(--purple)}.kd.t{color:var(--teal)}
+.ks{font-size:10.5px;color:var(--muted);margin-top:2px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:12px}
+.card h3{font-size:14.5px;font-weight:700;color:var(--heading);margin-bottom:11px;display:flex;align-items:center;gap:9px}
+.ic{width:26px;height:26px;border-radius:6px;background:rgba(74,222,128,.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.card p{color:#618070;margin-bottom:9px;font-size:14px}
+.card p:last-child{margin-bottom:0}
+.hl{color:var(--green);font-weight:600}.hlb{color:var(--blue);font-weight:600}.hlw{color:var(--warn);font-weight:600}.hlr{color:var(--danger);font-weight:600}.hlp{color:var(--purple);font-weight:600}.hlo{color:var(--orange);font-weight:600}.hlt{color:var(--teal);font-weight:600}
+.dt{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0}
+.dt th{text-align:left;padding:8px 10px;background:var(--surface2);color:var(--muted);font-size:10.5px;text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.dt td{padding:8px 10px;border-bottom:1px solid var(--border);color:#618070}
+.dt tr:last-child td{border-bottom:none}
+.dt td:first-child{color:var(--heading);font-weight:600}
+.dt td.g{color:var(--green);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.b{color:var(--blue);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.w{color:var(--warn);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.r{color:var(--danger);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.p{color:var(--purple);font-family:'JetBrains Mono',monospace;font-weight:700}
+.dt td.t{color:var(--teal);font-family:'JetBrains Mono',monospace;font-weight:700}
+.ul{list-style:none;padding:0}
+.ul li{padding:4px 0 4px 20px;position:relative;color:#618070;font-size:14px}
+.ul li::before{content:'→';position:absolute;left:0;color:var(--green);font-weight:700}
+.ul li.risk::before{content:'⚠';color:var(--danger);font-size:11px;top:6px}
+.ul li.neu::before{content:'◆';color:var(--teal);font-size:9px;top:7px}
+.tl{position:relative;padding-left:20px}
+.tl::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--border)}
+.tli{position:relative;padding-bottom:16px}
+.tli:last-child{padding-bottom:0}
+.tld{position:absolute;left:-18px;top:5px;width:10px;height:10px;border-radius:50%;border:2px solid var(--accent);background:var(--bg)}
+.tld.g{border-color:var(--green)}.tld.w{border-color:var(--warn)}.tld.p{border-color:var(--purple)}.tld.t{border-color:var(--teal)}
+.tldate{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:600;margin-bottom:2px}
+.tllbl{font-size:13.5px;color:var(--heading);font-weight:600}
+.tldesc{font-size:12.5px;color:var(--muted);margin-top:2px}
+.frow{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border)}
+.frow:last-child{border-bottom:none}
+.flvl{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);width:80px}
+.fprice{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--heading);width:72px}
+.fbar{flex:1;height:4px;background:var(--surface2);border-radius:2px;overflow:hidden}
+.fbar-fill{height:100%;border-radius:2px}
+.ftag{width:120px;text-align:right}
+.tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700}
+.tg{background:rgba(52,211,153,.12);color:var(--green)}
+.tb{background:rgba(96,165,250,.12);color:var(--blue)}
+.tw{background:rgba(251,191,36,.12);color:var(--warn)}
+.tr{background:rgba(248,113,113,.12);color:var(--danger)}
+.tp{background:rgba(192,132,252,.12);color:var(--purple)}
+.tt{background:rgba(45,212,191,.12);color:var(--teal)}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+@media(max-width:600px){.pg{grid-template-columns:1fr}}
+.pc{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
+.pc .hz{font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.pc h4{font-size:13px;color:var(--heading);margin-bottom:6px}
+.pc ul{list-style:none;padding:0}
+.pc ul li{font-size:12.5px;color:var(--muted);padding:3px 0 3px 12px;position:relative}
+.pc ul li::before{content:'·';position:absolute;left:0;font-weight:900;font-size:16px;top:-1px}
+.deal-box{background:linear-gradient(135deg,rgba(74,222,128,.06),rgba(45,212,191,.04));border:1px solid rgba(74,222,128,.25);border-radius:12px;padding:20px 22px;margin:14px 0}
+.deal-title{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.deal-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+.deal-row:last-child{border-bottom:none}
+.deal-lbl{font-size:13px;color:#618070}
+.deal-val{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--green)}
+.verdict{background:linear-gradient(135deg,rgba(74,222,128,.05),rgba(45,212,191,.03));border:1px solid rgba(74,222,128,.2);border-radius:12px;padding:22px}
+.verdict .vt{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.verdict p{color:#618070;margin-bottom:9px;font-size:14px}
+.verdict p:last-child{margin-bottom:0}
+.conclu{font-size:14.5px;font-weight:600;color:var(--heading);border-top:1px solid var(--border);padding-top:13px;margin-top:13px}
+.gap{height:26px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="badge">💉 Analyse Forum · ALCJ · Euronext Paris · PEA-PME · Compartiment C</div>
+  <h1>Crossject — ZENEO® sans aiguille · ZEPIZURE® &amp; BARDA<br>Analyse complète CT / MT / LT · 13 mars 2026</h1>
+  <div class="hero-meta">
+    <span>📅 13 mars 2026</span>
+    <span>💶 Cours 1,964 € (+1,24%)</span>
+    <span>🏭 Dijon · Pharma urgence · Auto-injecteur sans aiguille</span>
+    <span>⚠️ NPC — pas un conseil en investissement</span>
+  </div>
+</div>
+
+<!-- ALERT EUA -->
+<div class="alert ag">
+  <div class="at">🚨 Catalyseur imminent — EUA FDA en cours d'examen · Crossject USA inscrite SAM le 09/03/2026</div>
+  <p><strong>Le dossier EUA de ZEPIZURE® a été déposé par la BARDA auprès de la FDA fin 2025.</strong> La réponse initiale de la FDA est attendue dans le mois suivant le dépôt — nous serions dans cette fenêtre. Le 09/03/2026, Crossject USA Inc. vient d'être inscrite dans le registre fédéral américain SAM ("All Awards") — la structure qui permet de recevoir des paiements fédéraux directement aux États-Unis. Ce type d'enregistrement intervient généralement quand on se rapproche de la phase industrielle/supply. C'est un signal indirect mais <strong>rarement anodin dans les contrats BARDA</strong>. Résultats annuels 2025 attendus le <strong>24 mars 2026</strong>.</p>
+</div>
+
+<!-- ALERT SAM -->
+<div class="alert ab">
+  <div class="at">🇺🇸 Crossject USA Inc. — SAM · BioMaP Consortium · Paiements BARDA FY2026</div>
+  <p>Depuis octobre 2025, la cadence des signaux positifs s'accélère : financement BARDA +11,3 M$ (sept 2025), Vatel Capital +5 M€ (nov 2025), couverture Portzamparc "Achat Fort 4,50 €" (fév 2026), inscription SAM (mars 2026), paiements BARDA FY2026 en cours (3,48 M$ P01-P03). <strong>Le dossier progresse de façon décisive selon les propres termes de la société.</strong></p>
+</div>
+
+<!-- KPIs -->
+<div class="slbl">Chiffres clés — 13 mars 2026</div>
+<div class="kg">
+  <div class="kpi"><div class="kl">Cours</div><div class="kv">1,964 €</div><div class="kd up">+1,24%</div><div class="ks">52s : 0,72 € – 2,695 €</div></div>
+  <div class="kpi"><div class="kl">Capitalisation</div><div class="kv">~100 M€</div><div class="kd bl">51,07 M actions</div><div class="ks">Euronext Paris · PEA-PME</div></div>
+  <div class="kpi"><div class="kl">RSI journalier</div><div class="kv">47,31</div><div class="kd bl">Neutre</div><div class="ks">MACD -0,11 · légèrement négatif</div></div>
+  <div class="kpi"><div class="kl">Contrat BARDA</div><div class="kv">$60 M</div><div class="kd up">extensible $155 M</div><div class="ks">$32M R&D + $60M livraison SNS</div></div>
+  <div class="kpi"><div class="kl">Résultat net S1 2025</div><div class="kv">-4,9 M€</div><div class="kd up">↓ vs -6,4 M€</div><div class="ks">amélioration +23%</div></div>
+  <div class="kpi"><div class="kl">Remb. BARDA S1 2025</div><div class="kv">6,5 M€</div><div class="kd up">+3,4 M€ vs S1 2024</div><div class="ks">couverture opex renforcée</div></div>
+  <div class="kpi"><div class="kl">Trésorerie S1 2025</div><div class="kv">6,3 M€</div><div class="kd warn">+ OC + France 2030</div><div class="ks">+Vatel 5M€ nov 2025</div></div>
+  <div class="kpi"><div class="kl">Résultats annuels 2025</div><div class="kv">24 mars</div><div class="kd p">dans 11 jours</div><div class="ks">catalyseur immédiat</div></div>
+</div>
+
+<!-- PRÉSENTATION -->
+<div class="gap"></div>
+<div class="slbl">Présentation — Crossject & la technologie ZENEO®</div>
+<div class="card">
+  <h3><span class="ic">🏭</span> La seule plateforme d'auto-injection sans aiguille multi-médicaments homologuée</h3>
+  <p>Crossject (fondée en 2001, Dijon) développe <strong>ZENEO®</strong> — un auto-injecteur sans aiguille, pré-rempli, à usage unique, permettant une injection intramusculaire instantanée sur peau nue ou à travers les vêtements, sans formation préalable. La technologie est brevetée et polyvalente : une même plateforme supporte plusieurs médicaments d'urgence.</p>
+  <p>La valeur clé est la <strong>plateforme ZENEO® elle-même</strong> — pas un seul médicament. C'est un actif de propriété intellectuelle déployable sur l'ensemble du pipeline : épilepsie, overdose opioïdes, choc anaphylactique, insuffisance surrénale, crise d'asthme, migraine…</p>
+  <table class="dt">
+    <tr><th>Programme</th><th>Indication</th><th>Stade</th><th>Partenaire</th><th>Marché estimé</th></tr>
+    <tr><td><strong>ZEPIZURE®</strong></td><td style="color:#6872a8">État de mal épileptique</td><td class="p">EUA FDA en cours ⚡</td><td class="t">BARDA (US Gov.)</td><td class="g">$60→155 M contrat</td></tr>
+    <tr><td>ZENEO® Hydrocortisone</td><td style="color:#6872a8">Insuffisance surrénale aiguë</td><td class="b">Dév. clinique / dépôt S2 2026</td><td class="t">Eton Pharmaceuticals</td><td class="g">>$100 M (Eton)</td></tr>
+    <tr><td>ZENEO® Adrénaline</td><td style="color:#6872a8">Choc anaphylactique</td><td class="w">Préclinique / France 2030</td><td class="g">BPI 6,9 M€</td><td class="g">Marché EpiPen >$1 Md</td></tr>
+    <tr><td>ZENEO® Naloxone</td><td style="color:#6872a8">Overdose opioïdes</td><td style="color:#374151">Développement</td><td>—</td><td style="color:#374151">Marché US massif</td></tr>
+    <tr><td>ZENEO® Terbutaline</td><td style="color:#6872a8">Crise d'asthme sévère</td><td style="color:#374151">Développement</td><td>—</td><td style="color:#374151">—</td></tr>
+  </table>
+</div>
+
+<!-- ZEPIZURE & BARDA -->
+<div class="gap"></div>
+<div class="slbl">ZEPIZURE® & BARDA — Le catalyseur #1</div>
+<div class="card">
+  <h3><span class="ic">🇺🇸</span> Contrat gouvernemental US $60 M · EUA FDA · SNS CHEMPACK · NDA S1 2026</h3>
+  <p>ZEPIZURE® est un Midazolam en injection IM sans aiguille (ZENEO®) pour le traitement en urgence des états de mal épileptique. Le contrat avec la BARDA (organe de R&D biomédical du gouvernement US) prévoit :</p>
+  <div class="cpt">
+    <div class="cpt-row"><div class="cpt-lbl">Financement R&D BARDA</div><div class="cpt-val" style="color:var(--green)">$32 M (versés progressivement)</div></div>
+    <div class="cpt-row"><div class="cpt-lbl">Livraison SNS / CHEMPACK</div><div class="cpt-val" style="color:var(--green)">$60 M (post-EUA)</div></div>
+    <div class="cpt-row"><div class="cpt-lbl">Extension potentielle</div><div class="cpt-val" style="color:var(--teal)">jusqu'à $155 M total</div></div>
+    <div class="cpt-row"><div class="cpt-lbl">Extension R&D sept. 2025</div><div class="cpt-val" style="color:var(--green)">+11,3 M$ supplémentaires</div></div>
+    <div class="cpt-row"><div class="cpt-lbl">Paiements BARDA FY2026 (P01-P03)</div><div class="cpt-val" style="color:var(--green)">3,48 M$ déjà versés</div></div>
+    <div class="cpt-row"><div class="cpt-lbl">Statut EUA dossier</div><div class="cpt-val" style="color:var(--warn)">Déposé par BARDA fin 2025 → examen FDA en cours</div></div>
+    <div class="cpt-row"><div class="cpt-lbl">NDA (commercialisation grand public)</div><div class="cpt-val" style="color:var(--blue)">Dépôt S1 2026 — Crossject conserve droits US</div></div>
+  </div>
+  <div style="background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);border-radius:8px;padding:13px 16px;margin-top:12px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--warn);margin-bottom:7px">⚠️ Point de vigilance important : contexte politique US 2026</div>
+    <p style="color:#fde68a;margin:0;font-size:13.5px">La BARDA est un organe du Département de la Santé américain (HHS). Dans le contexte de la politique de dégraissage de l'État fédéral, des incertitudes existent sur la continuité de certains programmes. Crossject a cependant déclaré ne pas être exposée aux droits de douane sur ses livraisons destinées à la BARDA, et le programme CHEMPACK (préparation aux menaces chimiques) est considéré comme programme de sécurité nationale — généralement plus protégé. La création de Crossject USA Inc. dans SAM renforce la résilience du dispositif.</p>
+  </div>
+</div>
+
+<!-- CHRONOLOGIE NEWS -->
+<div class="gap"></div>
+<div class="slbl">Chronologie — 12 mois de catalyseurs structurants</div>
+<div class="card">
+  <h3><span class="ic">⚡</span> Une séquence de validation sans faille depuis l'été 2025</h3>
+  <div class="tl">
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">JUIN 2025 ✅</div>
+      <div class="tllbl">AC avec DPS 5,7 M€ — Gemmes Venture / Vatel Capital entrent <span class="tag tg">FINANCEMENT</span></div>
+      <div class="tldesc">Levée sursouscrite à près de 100%. Prix 1,40 €. Eurofins complète les lots de validation EUA avec succès.</div>
+    </div>
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">SEPT. 2025 ✅</div>
+      <div class="tllbl">Extension BARDA +11,3 M$ · Audits à blanc FDA sur sites Dijon/Gray <span class="tag tg">TRÈS POSITIF</span></div>
+      <div class="tldesc">La BARDA conduit des mock audits pour préparer la société aux inspections FDA réelles. Signe que le dépôt est imminent. Extension de financement non dilutive simultanée.</div>
+    </div>
+    <div class="tli">
+      <div class="tld b"></div>
+      <div class="tldate">NOV. 2025 ✅</div>
+      <div class="tllbl">Vatel Capital 5 M€ en OC · ZENEO® Nest finalisé <span class="tag tb">FINANCEMENT + INDUSTRIE</span></div>
+      <div class="tldesc">OC sans décote. Le ZENEO® Nest permet le remplissage aseptique haute cadence chez tout CDMO — sécurisation de la chaîne de production commerciale. Runway étendu.</div>
+    </div>
+    <div class="tli">
+      <div class="tld p"></div>
+      <div class="tldate">DÉC. 2025 (supposé)</div>
+      <div class="tllbl">Dépôt dossier EUA par BARDA auprès de la FDA <span class="tag tp">CATALYSEUR CLE</span></div>
+      <div class="tldesc">Selon le calendrier annoncé, le dépôt était attendu fin 2025. La réponse initiale de la FDA (confirmation réception dossier complet) est attendue dans le mois suivant le dépôt → fenêtre janv-fév 2026. Les délais sont possibles mais les signaux récents (SAM, paiements) pointent vers une progression.</div>
+    </div>
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">02 FÉV. 2026 ✅</div>
+      <div class="tllbl">Portzamparc (BNP Paribas) initie la couverture : Achat Fort, objectif 4,50 € <span class="tag tg">ANALYSTE MAJEUR</span></div>
+      <div class="tldesc">"The needles will soon be nothing more than a bad memory" — Crossject est désormais suivi par Alpha Value, Invest Securities, Maxim Group, Oddo, Portzamparc. 5 analystes couvrent le titre.</div>
+    </div>
+    <div class="tli">
+      <div class="tld g"></div>
+      <div class="tldate">09 MARS 2026 ✅</div>
+      <div class="tllbl">Crossject USA Inc. inscrite dans SAM ("All Awards") — Texas <span class="tag tg">SIGNAL US FORT</span></div>
+      <div class="tldesc">SAM = registre fédéral permettant de recevoir les paiements du gouvernement US. Enregistrement "All Awards". Dans les programmes BARDA, cette structure est généralement mise en place à l'approche de la phase industrielle/supply. Timing cohérent avec le post-dépôt EUA.</div>
+    </div>
+    <div class="tli">
+      <div class="tld w"></div>
+      <div class="tldate">24 MARS 2026 — J-11</div>
+      <div class="tllbl">Résultats annuels 2025 <span class="tag tw">CATALYSEUR IMMÉDIAT</span></div>
+      <div class="tldesc">Après bourse. Point d'étape sur l'EUA, trésorerie actuelle, avancement NDA, pipeline Hydrocortisone/Adrénaline. Potentiellement accompagné d'une mise à jour sur le statut FDA.</div>
+    </div>
+    <div class="tli">
+      <div class="tld w"></div>
+      <div class="tldate">S1 2026 — EN COURS</div>
+      <div class="tllbl">NDA dépôt FDA (commercialisation grand public) · Dépôts Hydrocortisone / Adrénaline S2 2026 <span class="tag tw">PIPELINE</span></div>
+      <div class="tldesc">Crossject conserve les droits de commercialisation directe aux US pour ZEPIZURE®. La NDA est distincte de l'EUA — c'est la voie vers la prescription ordinaire (grand public) au-delà du contrat BARDA/SNS.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TECHNIQUE -->
+<div class="gap"></div>
+<div class="slbl">Analyse technique — Graphique 1 Semaine au 13/03/2026</div>
+<div class="card">
+  <h3><span class="ic">📈</span> Cours 1,964 € · RSI 47,31 · MACD -0,11 · Sur le Golden Ratio Fibonacci</h3>
+  <p>Le graphique hebdomadaire montre un titre qui a réalisé un <strong>move ×3,75 depuis le plancher de 0,72 €</strong> (printemps 2025) jusqu'au pic à 2,695 € (fin 2025). Le cours consolide depuis ce pic dans un mouvement de retracement technique, et se trouve actuellement au niveau d'un support Fibonacci majeur.</p>
+
+  <div style="background:rgba(45,212,191,.07);border:1px solid rgba(45,212,191,.2);border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#99f6e4">
+    📐 <strong style="color:#ccfbf1">Tracé mèches — 0,72 € (plancher 2025) → 2,695 € (pic fin 2025)</strong> · Move total : 1,975 €
+  </div>
+  <div style="margin:14px 0">
+    <div class="frow"><div class="flvl">0% — base</div><div class="fprice" style="color:#1e3028">0,720 €</div><div class="fbar"><div class="fbar-fill" style="width:2%;background:#1e3028"></div></div><span class="ftag"><span class="tag" style="background:rgba(30,48,40,.3);color:#2d5040">plancher</span></span></div>
+    <div class="frow"><div class="flvl">23,6%</div><div class="fprice" style="color:#475569">1,186 €</div><div class="fbar"><div class="fbar-fill" style="width:20%;background:#475569"></div></div><span class="ftag"><span class="tag" style="background:rgba(71,85,105,.2);color:#94a3b8">S4</span></span></div>
+    <div class="frow"><div class="flvl">38,2%</div><div class="fprice">1,475 €</div><div class="fbar"><div class="fbar-fill" style="width:36%;background:var(--green)"></div></div><span class="ftag"><span class="tag tg">S3</span></span></div>
+    <div class="frow"><div class="flvl">50%</div><div class="fprice">1,708 €</div><div class="fbar"><div class="fbar-fill" style="width:50%;background:var(--teal)"></div></div><span class="ftag"><span class="tag tt">S2</span></span></div>
+    <div class="frow"><div class="flvl">61,8% 🔑</div><div class="fprice" style="color:var(--warn)">1,940 €</div><div class="fbar"><div class="fbar-fill" style="width:62%;background:var(--warn)"></div></div><span class="ftag"><span class="tag tw">Golden Ratio — S1</span></span></div>
+    <div class="frow" style="background:rgba(129,140,248,.04);border-radius:6px;padding:7px 4px"><div class="flvl" style="color:var(--accent)">COURS</div><div class="fprice" style="color:var(--accent)">1,964 €</div><div class="fbar"><div class="fbar-fill" style="width:63%;background:var(--accent)"></div></div><span class="ftag"><span class="tag tp">sur 61,8% ✓</span></span></div>
+    <div class="frow"><div class="flvl">76,4%</div><div class="fprice" style="color:var(--orange)">2,228 €</div><div class="fbar"><div class="fbar-fill" style="width:75%;background:var(--orange)"></div></div><span class="ftag"><span class="tag to">R1</span></span></div>
+    <div class="frow"><div class="flvl">100% — pic</div><div class="fprice" style="color:var(--purple)">2,695 €</div><div class="fbar"><div class="fbar-fill" style="width:100%;background:var(--purple)"></div></div><span class="ftag"><span class="tag tp">R2 — pic</span></span></div>
+  </div>
+
+  <div style="background:rgba(52,211,153,.07);border:1px solid rgba(52,211,153,.25);border-radius:8px;padding:13px 16px;margin:12px 0">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:8px">✅ RSI 47 neutre · Cours sur le Golden Ratio 61,8% · Support technique solide</div>
+    <p style="color:#a7f3d0;margin-bottom:6px;font-size:13.5px">Le cours à 1,964 € est <strong style="color:#d1fae5">pratiquement exactement sur le Fibonacci 61,8% à 1,940 €</strong> — le Golden Ratio du move 0,72→2,695 €. C'est le support technique le plus fort de la retracement. Le RSI à 47,31 est neutre — aucune surchauffe, de la marge haussière disponible. Le MACD légèrement négatif (-0,11) indique une compression qui précède généralement un mouvement directionnel.</p>
+    <p style="color:#a7f3d0;margin-bottom:0;font-size:13.5px">L'Ichimoku montre le cours sous le nuage (Kumo) — la sortie haussière du nuage serait le signal de reprise forte. La résistance rouge horizontale majeure sur le graphique se situe vers <strong style="color:#d1fae5">2,70-3,00 €</strong>. Au-dessus, voie libre vers les 6,00 € (résistance supérieure visible sur le graphique long terme).</p>
+  </div>
+  <p>Le support vert horizontal majeur à <strong>1,00 €</strong> est le filet de sécurité absolu en cas de choc négatif. La zone 1,475-1,708 € (Fibo 38,2%-50%) serait la prochaine zone d'accumulation en cas de retour sous 1,940 €.</p>
+</div>
+
+<!-- CONSENSUS -->
+<div class="gap"></div>
+<div class="slbl">Consensus analystes — 13/03/2026</div>
+<div class="card">
+  <h3><span class="ic">📊</span> 5 analystes · Achat Fort · Objectif moyen ~4,40 € · +124% de potentiel</h3>
+  <table class="dt">
+    <tr><th>Analyste / Maison</th><th>Recommandation</th><th>Objectif</th><th>Potentiel</th><th>Date</th></tr>
+    <tr><td><strong>Portzamparc (BNP Paribas)</strong></td><td class="g">Achat Fort</td><td class="g">4,50 €</td><td class="g">+129%</td><td class="t">02/02/2026 (initiation)</td></tr>
+    <tr><td>Oddo BHF</td><td class="g">Achat</td><td class="b">~4,30 €</td><td class="g">+119%</td><td style="color:#6872a8">2025-2026</td></tr>
+    <tr><td>Invest Securities</td><td class="g">Achat</td><td class="b">~4,30 €</td><td class="g">+119%</td><td style="color:#6872a8">2025-2026</td></tr>
+    <tr><td>Alpha Value</td><td class="g">Achat</td><td class="b">~4,50 €</td><td class="g">+129%</td><td style="color:#6872a8">2025-2026</td></tr>
+    <tr><td>Maxim Group (US)</td><td class="g">Achat</td><td class="b">~4,30 €</td><td class="g">+119%</td><td style="color:#6872a8">2025-2026</td></tr>
+    <tr style="background:rgba(52,211,153,.05)"><td><strong>Consensus moyen</strong></td><td class="g">Achat Fort (5/5)</td><td class="g" style="font-size:14px">~4,40 €</td><td class="g" style="font-size:14px">+124%</td><td></td></tr>
+  </table>
+  <div style="background:rgba(129,140,248,.07);border:1px solid rgba(129,140,248,.25);border-radius:8px;padding:12px 16px;margin-top:12px">
+    <p style="color:#c4b5fd;margin:0;font-size:13.5px"><strong style="color:#ede9fe">5 analystes unanimes "Achat Fort"</strong>, objectif moyen ~4,40 € — soit +124% depuis le cours actuel. L'initiation de couverture par Portzamparc/BNP Paribas le 2 février 2026, avec le titre de note "<em>The needles will soon be nothing more than a bad memory</em>", est un signal fort de crédibilité institutionnelle. Un analyste américain (Maxim Group) dans la liste souligne l'intérêt du marché US pour le dossier.</p>
+  </div>
+</div>
+
+<!-- PIPELINE -->
+<div class="gap"></div>
+<div class="slbl">Pipeline complet — La plateforme ZENEO® au-delà de ZEPIZURE®</div>
+<div class="pg">
+  <div class="pc">
+    <div class="hz" style="color:var(--purple)">🧬 ZENEO® Hydrocortisone</div>
+    <h4>Insuffisance surrénale aiguë</h4>
+    <ul>
+      <li>Partenariat Eton Pharmaceuticals (US)</li>
+      <li>Marché > $100 M selon Eton</li>
+      <li>Redevance ~10% ventes nettes</li>
+      <li>Dépôts réglementaires S2 2026+</li>
+      <li>Eton : "life-changing solution"</li>
+    </ul>
+  </div>
+  <div class="pc">
+    <div class="hz" style="color:var(--teal)">💉 ZENEO® Adrénaline</div>
+    <h4>Choc anaphylactique</h4>
+    <ul>
+      <li>BPI France 2030 : 6,9 M€ accordés</li>
+      <li>1,7 M€ versés, reste à percevoir</li>
+      <li>Marché EpiPen US > $1 Md</li>
+      <li>Dépôts réglementaires S2 2026+</li>
+      <li>Brevet ZENEO = avantage décisif</li>
+    </ul>
+  </div>
+  <div class="pc">
+    <div class="hz" style="color:var(--orange)">🔬 Autres programmes</div>
+    <h4>Pipeline long terme</h4>
+    <ul>
+      <li>ZENEO® Naloxone (overdose opioïdes)</li>
+      <li>ZENEO® Terbutaline (asthme sévère)</li>
+      <li>ZENEO® Sumatriptan (migraine)</li>
+      <li>ZENEO® Methotrexate (rhumato.)</li>
+      <li>BioMaP Consortium US (préparation biologique)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CT MT LT -->
+<div class="gap"></div>
+<div class="slbl">Perspectives CT / MT / LT</div>
+<div class="pg">
+  <div class="pc">
+    <div class="hz" style="color:var(--warn)">🕐 CT · 0-3 mois</div>
+    <h4>Catalyseurs immédiats</h4>
+    <ul>
+      <li>Résultats annuels 2025 (24/03)</li>
+      <li>Décision EUA FDA (tout moment)</li>
+      <li>Point SAM / Crossject USA</li>
+      <li>NDA dépôt S1 2026</li>
+      <li>Paiements BARDA FY2026 P04+</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--warn)">Risques CT</h4>
+    <ul>
+      <li>Retard FDA (questions supplémentaires)</li>
+      <li>Résultats trésorerie déçevants</li>
+      <li>Politique BARDA/HHS (contexte US)</li>
+    </ul>
+  </div>
+  <div class="pc">
+    <div class="hz" style="color:var(--green)">📅 MT · 3-12 mois</div>
+    <h4>Moteurs de re-rating</h4>
+    <ul>
+      <li>EUA accordée → livraison SNS $60 M</li>
+      <li>NDA FDA acceptée → commercialisation</li>
+      <li>Premières ventes ZEPIZURE® US</li>
+      <li>Deal Hydrocortisone (Eton) avancement</li>
+      <li>Entrée investisseurs institutionnels US</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--warn)">Risques MT</h4>
+    <ul>
+      <li>EUA refusée / dossier incomplet</li>
+      <li>Dilution supplémentaire si trésorerie</li>
+      <li>Concurrence injecteurs classiques</li>
+    </ul>
+  </div>
+  <div class="pc">
+    <div class="hz" style="color:var(--purple)">🔭 LT · 12 mois+</div>
+    <h4>Thèse haussière</h4>
+    <ul>
+      <li>ZEPIZURE® prescription US (NDA)</li>
+      <li>ZENEO® = standard urgences mondiales</li>
+      <li>Hydrocortisone + Adrénaline + Naloxone</li>
+      <li>Licences ZENEO® à big pharma</li>
+      <li>Cible d'acquisition (Teva, Pfizer, J&J…)</li>
+    </ul>
+    <h4 style="margin-top:10px;color:var(--danger)">Risques LT</h4>
+    <ul>
+      <li>Délais réglementaires répétés</li>
+      <li>Erosion brevets / copies</li>
+      <li>Gestion trésorerie si revenus tardent</li>
+    </ul>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="gap"></div>
+<div class="slbl">Mon avis personnel</div>
+<div class="verdict">
+  <div class="vt">💬 Verdict</div>
+  <p>Crossject est un dossier de <strong>technologie de rupture avec un contrat gouvernemental US signé</strong> — ce qui le distingue radicalement de la plupart des biotechs pré-revenus. Le contrat BARDA ($60M→$155M) est réel, signé, et partiellement exécuté. Ce n'est pas une promesse — c'est une commande conditionnée à l'EUA FDA, dont le dossier est en cours d'examen.</p>
+  <p>Ce que j'apprécie fondamentalement :</p>
+  <ul class="ul" style="margin:8px 0">
+    <li><span class="hl">Plateforme ZENEO®</span> = actif de propriété intellectuelle multi-usages. Ce n'est pas une molécule — c'est un système de délivrance breveté applicable à n'importe quel médicament injectable d'urgence. La valeur est structurelle et durable.</li>
+    <li class="neu"><span class="hlb">5 analystes unanimes Achat Fort</span> à ~4,40 € — dont Portzamparc/BNP Paribas et Maxim Group (US). La couverture américaine est un signal fort d'intérêt institutionnel transatlantique.</li>
+    <li><span class="hlp">SAM + paiements BARDA FY2026 + BioMaP</span> : les signaux indirects pointent tous vers une progression du programme, pas un ralentissement. On ne crée pas Crossject USA dans SAM si le programme est mal engagé.</li>
+    <li class="neu"><span class="hlb">Cours sur le Golden Ratio (1,940 €)</span> — support Fibonacci majeur avec RSI 47 neutre. Configuration technique favorable pour une entrée graduelle.</li>
+    <li class="risk"><span class="hlr">Trésorerie à surveiller</span> — le runway est assuré par les OC et France 2030, mais tout retard FDA se paie en dilution potentielle.</li>
+  </ul>
+  <p><strong>La nuance honnête :</strong> Crossject a accumulé plusieurs retards par rapport aux annonces initiales du PDG (EUA attendue "début 2025" annoncée fin 2024). Le marché a sanctionné ces délais — le cours est encore loin du pic. La crédibilité de la roadmap reste à démontrer. Le contexte politique US (HHS, BARDA) ajoute une couche d'incertitude non-négligeable en 2026.</p>
+  <div class="conclu">
+    🎯 <strong>Dossier de conviction avec un contrat gouvernemental réel et une technologie différenciante.</strong> <span style="color:var(--warn);font-weight:600">Support clé : Golden Ratio 1,940 € → 1,708 € (50%) en cas de retour. Résistances : 2,228 € (76,4%) → 2,695 € (pic) → 3,00 € (résistance historique). Catalyseur #1 : annonce EUA FDA — peut tomber à tout moment. Résultats annuels 24 mars = première fenêtre de mise à jour. Objectif consensus : 4,40 € (+124%).</span>
+  </div>
+</div>
+
+<div style="margin-top:20px;padding:12px;background:var(--surface);border-radius:8px;font-size:11.5px;color:var(--muted);text-align:center;border:1px solid var(--border)">
+  Sources : Communiqués Crossject (2024-2026), BioSpace, GlobeNewswire, Boursorama forum (Surmars/info SAM 09/03/2026), Investing.com, Zonebourse, résultats S1 2025 Crossject, Portzamparc initiation fév. 2026 · Analyse personnelle non professionnelle · Ne constitue pas un conseil en investissement · DYOR
+</div>
+
+</div>
+</body>
+</html>
